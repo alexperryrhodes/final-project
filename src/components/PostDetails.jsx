@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function PostDetails(props) {
 
-  console.log("PD", props.details.title)
-
   return (
     <div className="PostDetails">
       <h2>{props.details.title}</h2>

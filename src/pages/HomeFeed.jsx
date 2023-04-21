@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Post from "../components/Post";
 import SortButton from "../components/SortButton";
 
 export default function HomeFeed({ data }) {
-
-  console.log("d", data)
-
   const [post, setPost] = useState([]);
 
   useEffect(() => {
@@ -15,7 +12,6 @@ export default function HomeFeed({ data }) {
 
   return (
     <div>
-      <p>HomeFeed</p>
       <NavBar />
       <SortButton />
 
