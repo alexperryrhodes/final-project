@@ -4,3 +4,26 @@
   padding: 2rem;
   text-align: center;
 }
+
+
+p {
+  color: white;
+}
+
+.HomeFeed {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.Post {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  border-color: white;
+  margin:  10px;
+  width: 500px;
+}
+
+.postButton {
+  margin: 10px;
+}
