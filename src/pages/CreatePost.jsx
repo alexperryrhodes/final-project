@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { supabase } from "../src/client";
+import { supabase } from "../client";
 import NavBar from "../components/NavBar";
 
 export default function CreatePost() {
@@ -43,9 +43,7 @@ export default function CreatePost() {
 
   return (
     <div>
-      <p>CreatePost</p>
       <NavBar />
-
       <div>
         <form>
           <label>Title</label> <br />
@@ -53,7 +51,7 @@ export default function CreatePost() {
             type="text"
             id="title"
             name="title"
-            value={crew.title}
+            value={post.title}
             onChange={handleChange}
           />
           <br />
@@ -64,7 +62,7 @@ export default function CreatePost() {
             type="test"
             id="content"
             name="content"
-            value={crew.content}
+            value={post.content}
             onChange={handleChange}
           />
           <br />
@@ -75,12 +73,12 @@ export default function CreatePost() {
             type="text"
             id="image_url"
             name="image_url"
-            value={crew.image_url}
+            value={post.image_url}
             onChange={handleChange}
           />
           <br />
           <br />
-          <input type="submit" value="Submit" onClick={createCrew} />
+          <input type="submit" value="Submit" onClick={createPost} />
         </form>
       </div>
     </div>
