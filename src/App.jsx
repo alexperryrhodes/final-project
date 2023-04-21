@@ -3,7 +3,7 @@ import { useRoutes, Link } from "react-router-dom";
 import './App.css'
 import HomeFeed from './pages/HomeFeed'
 import CreatePost from './pages/CreatePost'
-import PostDetail from './pages/PostDetail'
+import DetailPage from './pages/DetailPage'
 import UpdatePost from './pages/UpdatePost'
 import { supabase } from "./client";
 
@@ -36,7 +36,7 @@ function App() {
     },
     {
       path: "/:id",
-      element: <PostDetail data={posts} />,
+      element: <DetailPage data={posts} />,
     },
     {
       path: "/create",
