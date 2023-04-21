@@ -1,13 +1,54 @@
-import { useState } from 'react'
+import { useState, useEffect } from "react";
+import { useRoutes, Link } from "react-router-dom";
 import './App.css'
 import HomeFeed from './pages/HomeFeed'
+import CreatePost from './pages/CreatePost'
+import PostDetail from './pages/PostDetail'
+import UpdatePost from './pages/UpdatePost'
+import { supabase } from "./client";
 
 function App() {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await supabase
+        .from("posts")
+        .select()
+        .order("created_at", { ascending: true });
+
+      setPosts(data);
+    };
+
+    fetchPosts();
+  }, []);
+  
+
+  let element = useRoutes([
+    {
+      path: "/",
+      element: <HomeFeed data={posts} />,
+    },
+    {
+      path: "/edit/:id",
+      element: <UpdatePost data={posts} />,
+    },
+    {
+      path: "/:id",
+      element: <PostDetail data={posts} />,
+    },
+    {
+      path: "/create",
+      element: <CreatePost />,
+    },
+  
+  ]);
+
   
   return (
     <div className="App">
-      <p>hi</p>
-      <HomeFeed/>
+      {element}
     </div>
   )
 }
