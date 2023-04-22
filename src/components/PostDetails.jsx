@@ -23,13 +23,12 @@ export default function PostDetails(props) {
       props.details.upvote_count = count
     }
 
-    // window.location = "/";
   };
 
   return (
     <div className="PostDetails">
       <h2>{props.details.title}</h2>
-      <img src={props.details.image_url} width="100" height="100" />
+      <img src={props.details.image_url} width="500" height="500" />
       <p>{props.details.content}</p>
       <p>{upvotes} upvotes</p>
 
