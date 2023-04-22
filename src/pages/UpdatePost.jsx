@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../client";
 import NavBar from "../components/NavBar";
-import PostForm from "../components/PostForm";
 
 export default function UpdatePost({ data }) {
   const { id } = useParams();
