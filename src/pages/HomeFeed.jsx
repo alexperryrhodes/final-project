@@ -21,6 +21,7 @@ export default function HomeFeed({ data }) {
             <Post
               key={post.id}
               id={post.id}
+              created_at={post.created_at}
               title={post.title}
               content={post.content}
               image_url={post.image_url}
