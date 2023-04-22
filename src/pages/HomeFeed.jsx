@@ -5,6 +5,15 @@ import SortButton from "../components/SortButton";
 
 export default function HomeFeed({ data }) {
   const [post, setPost] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue);
+    let filteredPosts = post.filter(function (item) {
+      return item.title.startsWith(searchValue);
+    });
+    setPost(filteredPosts);
+  };
 
   useEffect(() => {
     setPost(data);
@@ -13,9 +22,17 @@ export default function HomeFeed({ data }) {
   return (
     <div>
       <NavBar />
-      <SortButton />
 
       <div className="HomeFeed">
+        <input
+          className="searchInput"
+          type="text"
+          placeholder="Search..."
+          onChange={(inputString) => searchItems(inputString.target.value)}
+        />
+
+        <SortButton />
+
         {post && post.length > 0 ? (
           post.map((post, index) => (
             <Post
