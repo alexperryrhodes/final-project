@@ -14,6 +14,7 @@ p {
   display: grid;
   align-items: center;
   justify-content: center;
+  justify-items: center;
 }
 
 .Post {
@@ -24,6 +25,18 @@ p {
   width: 500px;
 }
 
-.postButton, .navButton, .submitButton, .deleteButton {
+.postButton, .navButton, .submitButton, .deleteButton, .sortButton {
   margin: 10px;
+}
+
+.sortButton {
+  width: 150px;
+}
+
+.searchInput {
+  width: 500px;
+}
+
+.sortButtonGroup {
+  display: block;
 }
