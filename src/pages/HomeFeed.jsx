@@ -19,6 +19,34 @@ export default function HomeFeed({ data }) {
     setPost(data);
   }, [data]);
 
+
+  const sortDataNewest = () => {
+    console.log("sort new")
+    const new_sort = post.sort(function(a, b) {
+      const keyA = new Date(a.updated_at);
+      const keyB = new Date(b.updated_at);
+      if (keyA < keyB) return 1;
+      if (keyA > keyB) return -1;
+      return 0;
+    });
+    console.log(new_sort);
+    setPost(new_sort);
+  }
+
+  const sortDataPopular = () => {
+    console.log("sort pop")
+    const pop_sort = post.sort(function(a, b) {
+      const keyA = a.upvote_count;
+      const keyB = b.upvote_count;
+      if (keyA < keyB) return 1;
+      if (keyA > keyB) return -1;
+      return 0;
+    });
+    console.log(pop_sort);
+    setPost(pop_sort);
+  }
+  
+
   return (
     <div>
       <NavBar />
@@ -31,7 +59,10 @@ export default function HomeFeed({ data }) {
           onChange={(inputString) => searchItems(inputString.target.value)}
         />
 
-        <SortButton />
+        <div className="sortButtonGroup">
+        <button className="sortButton" onClick={sortDataNewest}>Newest</button>
+          <button className="sortButton" onClick={sortDataPopular}>Most Popular</button>
+          </div>
 
         {post && post.length > 0 ? (
           post.map((post, index) => (
