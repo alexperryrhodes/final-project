@@ -1,4 +1,3 @@
-import SearchBar from "./SearchBar";
 import { useRoutes, Link } from "react-router-dom";
 
 export default function NavBar() {
@@ -12,7 +11,6 @@ export default function NavBar() {
         <button className="navButton"> Create Post </button>
       </Link>
       
-      <SearchBar />
     </div>
   );
 }
