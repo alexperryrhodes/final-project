@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchPosts = async () => {
+      console.log("fetch")
       const { data } = await supabase
         .from("posts")
         .select()
@@ -31,7 +32,7 @@ function App() {
       element: <HomeFeed data={posts} />,
     },
     {
-      path: "/edit/:id",
+      path: "/:id/edit/:id",
       element: <UpdatePost data={posts} />,
     },
     {
@@ -48,6 +49,7 @@ function App() {
   
   return (
     <div className="App">
+      <h1>Sewing Central</h1>
       {element}
     </div>
   )
