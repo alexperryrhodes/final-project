@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-https://github.com/alexperryrhodes/final-project/blob/main/gif.gif
+![](https://github.com/alexperryrhodes/final-project/blob/main/gif.gif)
 
 ## License
 
