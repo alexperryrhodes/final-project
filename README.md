@@ -41,9 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-## Notes
-
-Describe any challenges encountered while building the app.
+https://github.com/alexperryrhodes/final-project/blob/main/gif.gif
 
 ## License
 
